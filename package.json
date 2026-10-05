@@ -4,9 +4,11 @@
   "version": "1.0.0",
   "description": "Static site for bramlabs.io",
   "scripts": {
-    "dev": "vite --open"
+    "dev": "vite --open",
+    "deploy": "wrangler deploy"
   },
   "devDependencies": {
-    "vite": "^7.1.7"
+    "vite": "^7.1.7",
+    "wrangler": "^4.147.0"
   }
 }

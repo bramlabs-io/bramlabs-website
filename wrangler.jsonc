@@ -1,0 +1,19 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "bramlabs-website",
+  "main": "worker.js",
+  "compatibility_date": "2026-10-01",
+  "routes": [
+    { "pattern": "bramlabs.io/*", "zone_name": "bramlabs.io" },
+    { "pattern": "www.bramlabs.io/*", "zone_name": "bramlabs.io" }
+  ],
+  // The site is plain HTML with no build step: copy the static files as-is.
+  "build": {
+    "command": "rm -rf dist && mkdir dist && cp -r *.html _headers css js images dist/"
+  },
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "run_worker_first": true
+  }
+}
