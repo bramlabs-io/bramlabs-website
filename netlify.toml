@@ -1,0 +1,6 @@
+# The site is plain HTML with no build step. Without this, Netlify detects Vite
+# and runs `vite build`, which only emits index.html and drops the other pages,
+# js/ and images/.
+[build]
+  command = "rm -rf dist && mkdir dist && cp -r *.html css js images dist/"
+  publish = "dist"
