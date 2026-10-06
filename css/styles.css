@@ -1479,3 +1479,207 @@ svg {
 .brand-list li + li {
   margin-top: 0.6rem;
 }
+
+/* ---------------------------------------------------------------------------
+   The model: who owns what a product becomes. Ink is the studio, yellow is
+   the people who carry the product.
+--------------------------------------------------------------------------- */
+.own {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  margin: 1.75rem 0;
+  padding: 1.5rem;
+  background: var(--panel);
+  border-radius: var(--radius-box);
+}
+
+.own-case {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin: 0;
+}
+
+.own-case figcaption {
+  color: var(--ink-2);
+  font-size: 0.9375rem;
+}
+
+.own-bar {
+  display: grid;
+  gap: 3px;
+  height: 4.5rem;
+  border-radius: calc(var(--radius-box) - 0.5rem);
+  overflow: hidden;
+}
+
+.own-30 {
+  grid-template-columns: minmax(0, 30fr) minmax(0, 70fr);
+}
+
+.own-60 {
+  grid-template-columns: minmax(0, 60fr) minmax(0, 40fr);
+}
+
+.own-bar > span {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  white-space: nowrap;
+}
+
+.own-bar b {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.own-studio {
+  background: var(--ink);
+  color: var(--on-ink);
+}
+
+.own-people {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+@media (min-width: 640px) {
+  .own {
+    padding: 2rem;
+  }
+
+  .own-bar > span {
+    padding: 0 1rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* Phases: what happens to the product, then what happens to ownership. */
+.phases {
+  list-style: none;
+  margin: 1.75rem 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.phases li {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  background: var(--panel);
+  border-radius: var(--radius-box);
+}
+
+.phases li.spinout {
+  background: var(--accent-wash);
+}
+
+.phases .num {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent-ink);
+  padding-top: 0.45rem;
+}
+
+.phases h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.phases .owns {
+  margin-top: 1rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--rule);
+  color: var(--ink);
+  font-size: 0.9375rem;
+}
+
+.phases li.spinout .owns {
+  border-top-color: color-mix(in srgb, var(--accent) 45%, transparent);
+}
+
+.phases .owns b {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-ink);
+}
+
+@media (min-width: 640px) {
+  .phases li {
+    grid-template-columns: 3.5rem 1fr;
+    padding: 2rem;
+  }
+}
+
+/* Front page: the five phases as one row. */
+.track {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+.track li {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr;
+  gap: 0.25rem 0.75rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--panel);
+  border-radius: var(--radius-box);
+}
+
+.track li.spinout {
+  background: var(--accent-wash);
+}
+
+.track .num {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: var(--accent-ink);
+  padding-top: 0.3rem;
+}
+
+.track h3 {
+  font-size: 1.3rem;
+}
+
+.track p {
+  grid-column: 2;
+  color: var(--ink-2);
+  font-size: 0.9375rem;
+}
+
+@media (min-width: 820px) {
+  .track {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .track li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 1.5rem;
+  }
+
+  .track .num {
+    padding-top: 0;
+  }
+}

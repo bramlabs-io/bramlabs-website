@@ -2,7 +2,7 @@
 
 Static site for BramLabs (bramlabs.io). Plain HTML and CSS, no build step.
 
-- `index.html`, `philosophy.html`, `about.html`, `brand.html`, `contact.html`
+- `index.html`, `model.html`, `philosophy.html`, `about.html`, `brand.html`, `contact.html`
 - `css/styles.css` holds the design tokens. Warm off-white page, white boxes, black type and a warm yellow accent (palette modelled on akonlabs.com).
 - `js/site.js` handles the mobile menu and the email link.
 
