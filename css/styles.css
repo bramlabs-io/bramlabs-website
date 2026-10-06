@@ -1487,39 +1487,26 @@ svg {
 .own {
   display: flex;
   flex-direction: column;
-  gap: 1.75rem;
-  margin: 1.75rem 0;
+  gap: 0.9rem;
+  margin: 1.75rem 0 0;
   padding: 1.5rem;
   background: var(--panel);
   border-radius: var(--radius-box);
 }
 
-.own-case {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-  margin: 0;
-}
-
-.own-case figcaption {
+.own figcaption {
   color: var(--ink-2);
   font-size: 0.9375rem;
 }
 
+/* The widths are an illustration: X is not a fixed number. */
 .own-bar {
   display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
   gap: 3px;
   height: 4.5rem;
   border-radius: calc(var(--radius-box) - 0.5rem);
   overflow: hidden;
-}
-
-.own-30 {
-  grid-template-columns: minmax(0, 30fr) minmax(0, 70fr);
-}
-
-.own-60 {
-  grid-template-columns: minmax(0, 60fr) minmax(0, 40fr);
 }
 
 .own-bar > span {
@@ -1558,71 +1545,6 @@ svg {
   .own-bar > span {
     padding: 0 1rem;
     font-size: 0.75rem;
-  }
-}
-
-/* Phases: what happens to the product, then what happens to ownership. */
-.phases {
-  list-style: none;
-  margin: 1.75rem 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.phases li {
-  display: grid;
-  grid-template-columns: 2.5rem 1fr;
-  gap: 0.75rem;
-  padding: 1.5rem;
-  background: var(--panel);
-  border-radius: var(--radius-box);
-}
-
-.phases li.spinout {
-  background: var(--accent-wash);
-}
-
-.phases .num {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--accent-ink);
-  padding-top: 0.45rem;
-}
-
-.phases h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.phases .owns {
-  margin-top: 1rem;
-  padding-top: 0.9rem;
-  border-top: 1px solid var(--rule);
-  color: var(--ink);
-  font-size: 0.9375rem;
-}
-
-.phases li.spinout .owns {
-  border-top-color: color-mix(in srgb, var(--accent) 45%, transparent);
-}
-
-.phases .owns b {
-  display: block;
-  margin-bottom: 0.2rem;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--accent-ink);
-}
-
-@media (min-width: 640px) {
-  .phases li {
-    grid-template-columns: 3.5rem 1fr;
-    padding: 2rem;
   }
 }
 
