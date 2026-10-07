@@ -1269,14 +1269,14 @@ svg {
   }
 }
 
-/* Products: three tiles, one row on desktop */
+/* Products: two columns on desktop */
 .grid-products {
   grid-template-columns: 1fr;
 }
 
 @media (min-width: 820px) {
   .grid-products {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
