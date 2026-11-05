@@ -9,7 +9,7 @@
   ],
   // The site is plain HTML with no build step: copy the static files as-is.
   "build": {
-    "command": "rm -rf dist && mkdir dist && cp -r *.html _headers css js images dist/"
+    "command": "rm -rf dist && mkdir dist && cp -r *.html _headers css js images audio dist/"
   },
   "d1_databases": [
     {

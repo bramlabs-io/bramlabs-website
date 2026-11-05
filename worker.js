@@ -16,6 +16,10 @@ export default {
       return Response.redirect(url.toString(), 301);
     }
     // Serve the existing HTML asset without changing the public address.
+    if (['/idi/', '/idi.html'].includes(url.pathname)) {
+      url.pathname = '/idi';
+      return Response.redirect(url.toString(), 301);
+    }
     if (['/spil', '/spil/', '/spil.html', '/idi/spil/', '/idi/spil.html'].includes(url.pathname)) {
       url.pathname = '/idi/spil';
       return Response.redirect(url.toString(), 301);

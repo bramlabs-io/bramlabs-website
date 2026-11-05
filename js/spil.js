@@ -34,9 +34,10 @@ function resetStage(full = false) {
   if (full) { stage = 0; score = 0; totalKills = 0; elapsed = 0; stageStartScore = 0; stageStartKills = 0; }
   else { score = stageStartScore; totalKills = stageStartKills; }
   const s = stages[stage]; stageLength = s.length;
-  platforms = s.platforms.map(([x,y,w,h]) => ({x,y,w,h}));
-  enemies = s.enemies.map(([x,y,type], i) => ({ x, y: y - (type === 'boss' ? 67 : 26), w: type === 'boss' ? 142 : 64, h: type === 'boss' ? 130 : 50,
-    baseY:y, origin:x, hp:type === 'boss' ? 16 : stage === 0 ? 2 : 3, maxHp:type === 'boss' ? 16 : stage === 0 ? 2 : 3,
+  const reachableY = y => y < 582 ? y + 55 : y;
+  platforms = s.platforms.map(([x,y,w,h]) => ({x,y:reachableY(y),w,h}));
+  enemies = s.enemies.map(([x,y,type], i) => ({ x, y: reachableY(y) - (type === 'boss' ? 67 : 26), w: type === 'boss' ? 142 : 64, h: type === 'boss' ? 130 : 50,
+    baseY:reachableY(y), origin:x, hp:type === 'boss' ? 16 : stage === 0 ? 2 : 3, maxHp:type === 'boss' ? 16 : stage === 0 ? 2 : 3,
     type:type || 'burger', dir:i % 2 ? -1 : 1, phase:i * 1.9, hurt:0, lastHit:0, attack:2.5, dead:false }));
   player = {x:120,y:520,vx:0,vy:0,w:32,h:58,dir:1,hp:5,ground:false,jumps:0,coyote:0,jumpBuffer:0,attack:0,attackCooldown:0,dash:0,dashCooldown:0,hurt:0,land:0};
   camera = 0; kills = 0; combo = 0; comboTimer = 0; particles = []; words = []; projectiles = []; freeze = 0; shake = 0;
@@ -140,7 +141,7 @@ function update(dt) {
   else if(p.dash<=0)p.vx=lerp(p.vx,0,Math.min(1,dt*(p.ground?17:5)));
   if(pressed.has('jump'))p.jumpBuffer=.14;else p.jumpBuffer=Math.max(0,p.jumpBuffer-dt);
   if(p.jumpBuffer>0 && (p.ground||p.coyote>0||p.jumps<2)) {
-    const double=!(p.ground||p.coyote>0);p.vy=double?-635:-680;p.jumps=double?2:1;p.ground=false;p.coyote=0;p.jumpBuffer=0;
+    const double=!(p.ground||p.coyote>0);p.vy=double?-710:-760;p.jumps=double?2:1;p.ground=false;p.coyote=0;p.jumpBuffer=0;
     burst(p.x,p.y, double?14:8,'#5eacff',.55);audio.effect('jump');
     if(double)particles.push({x:p.x,y:p.y,vx:0,vy:0,life:.35,max:.35,size:8,ring:true,color:'#77caff',gravity:0});
   }
