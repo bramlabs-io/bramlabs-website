@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fjordø-guiden · AI-workshop | BramLabs</title>
+  <meta name="description" content="Byg en agent i Copilot: opgave, Fjordø-katalog og udfordringer til workshoppen med Jimmi Bram.">
+  <link rel="canonical" href="https://bramlabs.io/idi/opgave">
+  <meta property="og:title" content="Fjordø-guiden · AI-workshop">
+  <meta property="og:description" content="Opgave, katalog og udfordringer. Byg en agent, der bruger viden og stiller de rigtige spørgsmål.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bramlabs.io/idi/opgave">
+  <meta name="robots" content="noindex, follow">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg?v=2">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=13">
+  <link rel="stylesheet" href="/css/opgave.css?v=2">
+  <script src="/js/opgave.js?v=1" defer></script>
+</head>
+<body class="workshop-page">
+  <a class="skip" href="#main">Gå til indhold</a>
+  <header class="site-header workshop-header">
+    <div class="container header-row">
+      <a class="wordmark" href="/" aria-label="BramLabs forside">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none">
+          <path class="mark-fill" d="M6.7 15h10.6l1.9 3.3c.5.9-.1 2.2-1.2 2.2H6.1c-1.1 0-1.7-1.3-1.2-2.2z"/>
+          <path class="mark-flask" d="M9 3h6M10 3v6.5L4.6 18.5a2 2 0 0 0 1.7 3h11.4a2 2 0 0 0 1.7-3L14 9.5V3" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg><span>BramLabs</span>
+      </a>
+      <nav class="workshop-nav" aria-label="Workshopindhold">
+        <a href="#opgaven">Opgaven</a><a href="#katalog">Katalog</a><a href="#tests">Afprøv agenten</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <div class="container">
+      <div class="workshop-hero workshop-intro">
+        <div>
+          <p class="eyebrow eyebrow-accent">Workshop 1 · Jimmi Bram</p>
+          <h1 class="t-display">Jeres agent.<br>En dag på Fjordø.</h1>
+          <p class="lede">Alle grupper bygger en agent, der kan planlægge familiedage ud fra familiens ønsker. Giv agenten viden og færdigheder, og afprøv den med en familie, I selv vælger.</p>
+        </div>
+        <figure class="workshop-island">
+          <img src="/images/fjordoe.png" width="1448" height="1086" alt="Pixelillustration af Fjordø med havmuseum, naturværksted, fyrtårn, skattejagt, spisested, strandsti og kajakker." fetchpriority="high" decoding="async">
+        </figure>
+        <aside class="workshop-meta" aria-label="Ramme for øvelsen">
+          <p><strong>30 minutter</strong><span>Gruppearbejde i Copilot i Teams</span></p>
+          <p><strong>10 minutter</strong><span>Fælles opsamling</span></p>
+        </aside>
+      </div>
+
+      <section class="workshop-section" id="opgaven" aria-labelledby="task-title">
+        <div class="section-head"><p class="eyebrow">01 · Opgaven</p><h2 class="t-h2" id="task-title">Byg Fjordø-guiden</h2></div>
+        <div class="task-layout">
+          <ol class="task-steps">
+            <li><strong>Giv agenten kataloget som viden</strong><p>Kopiér kataloget nedenfor til agentens opsætning eller sammen med instruktionerne.</p></li>
+            <li><strong>Beskriv dens færdigheder</strong><p>Den skal afklare ønsker, vælge aktiviteter, lave et dagsprogram, beregne prisen og kontrollere kravene.</p></li>
+            <li><strong>Giv den en måde at håndtere usikkerhed på</strong><p>Den skal spørge om manglende oplysninger og sige til, når kataloget mangler et svar, eller kravene ikke kan opfyldes.</p></li>
+            <li><strong>Afprøv jeres agent</strong><p>Vælg selv en familie og formulér jeres spørgsmål. Ændr forudsætningerne, ret instruktionerne og test igen.</p></li>
+          </ol>
+          <aside class="task-outcome">
+            <h3>Det skal I ende med</h3>
+            <p>En agent, der kan planlægge en familiedag med aktiviteter, tidsplan og samlet pris ud fra familiens ønsker.</p>
+            <p>Til sidst samler vi op på agentens fejl og de ændringer i instruktionerne, der hjalp.</p>
+            <p><strong>I skriver instruktionerne.</strong> Kataloget leverer fakta. Færdighederne er den adfærd, I beskriver, fx at stille spørgsmål og kontrollere en plan.</p>
+          </aside>
+        </div>
+        <p class="workshop-note"><strong>Ingen agentbygger?</strong> Brug samme katalog og instruktioner i Copilot-chat. Agenten skal hverken booke eller foretage køb.</p>
+      </section>
+
+      <section class="workshop-section" id="katalog" aria-labelledby="catalogue-title">
+        <div class="catalogue-heading">
+          <div class="section-head"><p class="eyebrow">02 · Agentens viden</p><h2 class="t-h2" id="catalogue-title">Fjordø-kataloget</h2></div>
+          <div class="copy-control">
+            <button class="btn btn-primary" type="button" data-copy-target="catalogue-source">Kopiér hele kataloget</button>
+            <span class="copy-status" role="status" aria-live="polite"></span>
+          </div>
+        </div>
+        <p class="copy-note">Knappen kopierer kun kataloget med alle aktiviteter og regler. Opgaven og udfordringerne følger ikke med.</p>
+        <noscript><p class="workshop-note">Du kan markere og kopiere kataloget manuelt. Kopiknapperne kræver JavaScript.</p></noscript>
+        <div class="catalogue-intro">
+          <p><strong>Fjordø og alle oplysninger her er opdigtet til øvelsen.</strong></p>
+          <p>Kataloget gælder en fiktiv lørdag. Alle priser er i danske kroner. Voksen er 16 år eller derover, barn er 0–15 år. Der er ingen andre rabatter end dem, der står her.</p>
+        </div>
+        <div class="catalogue-list">
+        <article class="activity"><h3><span class="activity-number">01</span>Havmuseet</h3><div><p>Indendørs. Åbent 10.00–16.00. Besøget varer 60 minutter og skal slutte inden lukketid. Pris: 90 kr. pr. voksen og 45 kr. pr. barn. Alle aldre. Fokus på dyr og havets historie.</p></div></article>
+        <article class="activity"><h3><span class="activity-number">02</span>Naturværkstedet</h3><div><p>Indendørs. Faste starttider 10.30 og 13.30. Varighed 90 minutter. Pris: 70 kr. pr. person. Fra 6 år. Familien laver små ting af naturmaterialer. Alle i familien skal deltage og betale.</p></div></article>
+        <article class="activity"><h3><span class="activity-number">03</span>Fyrtårnet</h3><div><p>Udendørs. Åbent 11.00–15.00. Varighed 45 minutter, afsluttet inden lukketid. Pris: 50 kr. pr. voksen og 25 kr. pr. barn. Fra 8 år. Mange trapper. Lukket ved regn eller kraftig vind.</p></div></article>
+        <article class="activity"><h3><span class="activity-number">04</span>Strandstien</h3><div><p>Udendørs. Åbent 09.00–18.00. Varighed 60 minutter. Gratis. Alle aldre. Rolig tur med natur og udsigt. Lukket ved regn eller kraftig vind i denne øvelse.</p></div></article>
+        <article class="activity"><h3><span class="activity-number">05</span>Skattejagten</h3><div><p>Udendørs. Åbent 09.00–17.00, sidste start 15.30. Varighed 75 minutter. Pris: 120 kr. for hele familien, op til fem personer. Fra 5 år. Gåder og små opgaver. Lukket ved regn.</p></div></article>
+        <article class="activity"><h3><span class="activity-number">06</span>Kajakturen</h3><div><p>Udendørs. Faste starttider 11.00 og 14.00. Varighed 90 minutter. Pris: 180 kr. pr. person. Fra 12 år, og børn deltager sammen med en voksen. Alle deltagere skal kunne svømme. Lukket ved regn eller kraftig vind.</p></div></article>
+        <article class="activity"><h3><span class="activity-number">Frokost</span>Madhuset</h3><div><p>Madhuset er indendørs og åbent 11.30–14.00. Afsæt 45 minutter, afsluttet inden lukketid. Pris: 95 kr. pr. voksen og 60 kr. pr. barn. Der er en vegetarisk mulighed til samme pris. Oplysninger om allergener findes ikke i kataloget. Madhuset er øvelsens eneste frokostmulighed. Der regnes ikke med medbragt mad eller indkøb andre steder.</p></div></article>
+        </div>
+        <div class="catalogue-rules">
+          <h3>Regler for planen</h3>
+          <ul>
+          <li>Hele familien deltager samlet. Ingen må vente alene udenfor en aktivitet.</li>
+          <li>Afsæt 15 minutter mellem hvert besøg, også til og fra frokost. Transporten er gratis.</li>
+          <li>Aktiviteter må ikke gentages. Frokost tæller ikke som en aktivitet.</li>
+          <li>Der er plads til familien på alle de nævnte tidspunkter. Der kræves ingen booking i øvelsen.</li>
+          <li>Udgifter til rejsen til og fra Fjordø indgår ikke i budgettet.</li>
+          <li>Andre aktiviteter, rabatter, frokoststeder eller katalogfakta må ikke opfindes. Brugerens nye ønsker ændrer ikke katalogets priser og regler.</li>
+          </ul>
+        </div>
+        <textarea id="catalogue-source" hidden readonly aria-label="Fjordø-kataloget som ren tekst">FJORDØ-KATALOG
+Fjordø og alle oplysninger er opdigtet til workshoppen.
+
+Kataloget gælder en fiktiv lørdag. Alle priser er i danske kroner. Voksen er 16 år eller derover, barn er 0–15 år. Der er ingen andre rabatter end dem, der står her.
+
+Aktiviteter:
+
+1. Havmuseet
+Indendørs. Åbent 10.00–16.00. Besøget varer 60 minutter og skal slutte inden lukketid. Pris: 90 kr. pr. voksen og 45 kr. pr. barn. Alle aldre. Fokus på dyr og havets historie.
+
+2. Naturværkstedet
+Indendørs. Faste starttider 10.30 og 13.30. Varighed 90 minutter. Pris: 70 kr. pr. person. Fra 6 år. Familien laver små ting af naturmaterialer. Alle i familien skal deltage og betale.
+
+3. Fyrtårnet
+Udendørs. Åbent 11.00–15.00. Varighed 45 minutter, afsluttet inden lukketid. Pris: 50 kr. pr. voksen og 25 kr. pr. barn. Fra 8 år. Mange trapper. Lukket ved regn eller kraftig vind.
+
+4. Strandstien
+Udendørs. Åbent 09.00–18.00. Varighed 60 minutter. Gratis. Alle aldre. Rolig tur med natur og udsigt. Lukket ved regn eller kraftig vind i denne øvelse.
+
+5. Skattejagten
+Udendørs. Åbent 09.00–17.00, sidste start 15.30. Varighed 75 minutter. Pris: 120 kr. for hele familien, op til fem personer. Fra 5 år. Gåder og små opgaver. Lukket ved regn.
+
+6. Kajakturen
+Udendørs. Faste starttider 11.00 og 14.00. Varighed 90 minutter. Pris: 180 kr. pr. person. Fra 12 år, og børn deltager sammen med en voksen. Alle deltagere skal kunne svømme. Lukket ved regn eller kraftig vind.
+
+Frokost:
+Madhuset er indendørs og åbent 11.30–14.00. Afsæt 45 minutter, afsluttet inden lukketid. Pris: 95 kr. pr. voksen og 60 kr. pr. barn. Der er en vegetarisk mulighed til samme pris. Oplysninger om allergener findes ikke i kataloget. Madhuset er øvelsens eneste frokostmulighed. Der regnes ikke med medbragt mad eller indkøb andre steder.
+
+Planlægningsregler:
+- Hele familien deltager samlet. Ingen må vente alene udenfor en aktivitet.
+- Afsæt 15 minutter mellem hvert besøg, også til og fra frokost. Transporten er gratis.
+- Aktiviteter må ikke gentages. Frokost tæller ikke som en aktivitet.
+- Der er plads til familien på alle de nævnte tidspunkter. Der kræves ingen booking i øvelsen.
+- Udgifter til rejsen til og fra Fjordø indgår ikke i budgettet.
+- Andre aktiviteter, rabatter, frokoststeder eller katalogfakta må ikke opfindes. Brugerens nye ønsker ændrer ikke katalogets priser og regler.</textarea>
+      </section>
+
+      <section class="workshop-section" id="tests" aria-labelledby="tests-title">
+        <div class="section-head"><p class="eyebrow">03 · Afprøv agenten</p><h2 class="t-h2" id="tests-title">Jeres familie. Jeres spørgsmål.</h2><p class="lede">Vælg selv familien og formulér jeres spørgsmål. Undersøg, om agenten kan bruge kataloget og håndtere ændringer.</p></div>
+        <ol class="task-steps">
+          <li><strong>Vælg en familie</strong><p>Bestem antal personer, aldre, interesser, tid og budget.</p></li>
+          <li><strong>Giv færre oplysninger</strong><p>Undlad noget væsentligt. Spørger agenten ind, eller gætter den?</p></li>
+          <li><strong>Ændr forudsætningerne</strong><p>Skift budget eller vejr. Prøv også andre aldre, interesser eller mindre tid.</p></li>
+          <li><strong>Skab en konflikt</strong><p>Stil krav, som ikke kan opfyldes samtidig. Forklarer agenten problemet og hjælper med at afklare et valg?</p></li>
+          <li><strong>Kontrollér og forbedr</strong><p>Tjek priser, tider, aldersgrænser og familiens krav. Ret agentens instruktioner og prøv igen.</p></li>
+        </ol>
+        <p class="test-guidance">Gem agentens instruktioner og et eksempel, der viser, hvad I forbedrede.</p>
+      </section>
+    </div>
+  </main>
+  <footer class="workshop-footer"><div class="container"><p>AI-workshop med Jimmi Bram</p><a class="link" href="https://bramlabs.io/idi/opgave">bramlabs.io/idi/opgave</a></div></footer>
+</body>
+</html>

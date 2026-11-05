@@ -1,0 +1,100 @@
+/* Workshop handout. Shared BramLabs tokens and type live in styles.css. */
+html { scroll-behavior: smooth; }
+.workshop-page [hidden] { display: none !important; }
+.workshop-page :is(section, h2, h3)[id] { scroll-margin-top: 6rem; }
+.workshop-header { background: var(--paper); border-bottom: 1px solid var(--rule); }
+.workshop-header .header-row { justify-content: space-between; }
+.workshop-nav { display: flex; gap: 1.5rem; font-size: .9rem; font-weight: 500; }
+.workshop-nav a { text-decoration: underline; text-decoration-color: transparent; text-underline-offset: .3em; }
+.workshop-nav a:hover { text-decoration-color: var(--ink); }
+.workshop-hero { padding: 4.5rem 0 3.5rem; }
+.workshop-hero h1 { max-width: 15ch; margin: 1rem 0 1.25rem; }
+.workshop-hero .lede { max-width: 58ch; }
+.workshop-intro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2rem 3rem; align-items: center; }
+.workshop-island { grid-column: 2; grid-row: 1 / span 2; margin: 0; }
+.workshop-island img { display: block; width: 100%; height: auto; }
+.workshop-meta { grid-column: 1; display: flex; gap: 2rem; padding-block: 1rem; border-top: 2px solid var(--ink); }
+.workshop-meta p + p { margin-top: 0; }
+.workshop-meta strong { display: block; font-size: 1.2rem; font-weight: 600; }
+.workshop-meta span { font-size: .9rem; color: var(--ink-2); }
+.workshop-section { border-top: 1px solid var(--rule-strong); padding-block: 3.5rem; }
+.workshop-section .section-head { margin-bottom: 2rem; }
+.workshop-section .eyebrow { color: var(--accent-ink); }
+.workshop-section .t-h2 { font-size: clamp(2rem, 4vw, 3rem); }
+.task-layout { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 4rem; }
+.task-steps { margin: 0; padding-left: 1.5rem; }
+.task-steps li { padding-left: .5rem; }
+.task-steps li + li { margin-top: 1rem; }
+.task-steps strong { display: block; font-weight: 600; }
+.task-steps p { color: var(--ink-2); }
+.task-outcome { padding: 1.5rem; background: var(--accent-wash); }
+.task-outcome h3 { font-size: 1.3rem; margin-bottom: .8rem; }
+.task-outcome p + p { margin-top: .9rem; }
+.workshop-note { color: var(--ink-2); margin-top: 1.5rem; max-width: 80ch; }
+.workshop-note strong { color: var(--ink); }
+.catalogue-heading { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 1.5rem; }
+.catalogue-heading .section-head { margin-bottom: 0; }
+.copy-control { margin-block: .4rem 1.6rem; }
+.copy-control .btn { cursor: pointer; border: 1px solid var(--ink); }
+.copy-control .btn::before { display: none; }
+.copy-control .btn:hover { background: var(--accent); }
+.copy-control .btn:disabled { cursor: wait; opacity: .7; }
+.copy-status { min-height: 1.4rem; display: block; color: var(--ink-2); font-size: .85rem; margin-top: .4rem; }
+.copy-note { max-width: 60ch; color: var(--ink-2); font-size: .9rem; margin-top: .7rem; }
+.catalogue-intro { margin: 1.5rem 0 2rem; max-width: 75ch; }
+.catalogue-intro p + p { margin-top: .7rem; }
+.catalogue-list { border-top: 1px solid var(--rule-strong); }
+.activity { display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: 2rem; padding-block: 1.6rem; border-bottom: 1px solid var(--rule); }
+.activity h3 { font-size: 1.45rem; }
+.activity-number { color: var(--accent-ink); font-family: var(--font-mono); font-size: .75rem; display: block; margin-bottom: .6rem; }
+.activity p { max-width: 75ch; color: var(--ink-2); }
+.activity p + p { margin-top: .65rem; }
+.activity .activity-facts { color: var(--ink); font-weight: 500; }
+.catalogue-rules { padding-top: 2rem; max-width: 85ch; }
+.catalogue-rules h3 { font-size: 1.5rem; }
+.catalogue-rules ul { padding-left: 1.3rem; margin: 1rem 0 0; }
+.catalogue-rules li + li { margin-top: .7rem; }
+.test-list { counter-reset: tests; }
+.test { display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: 2rem; border-top: 1px solid var(--rule); padding-top: 1.8rem; margin-top: 1rem; }
+.test h3 { font-size: 1.4rem; }
+.test small { display: block; color: var(--ink-2); margin-top: .6rem; }
+.test blockquote { margin: 0 0 1rem; padding: 1.15rem 1.4rem; border-left: 3px solid var(--accent); background: var(--panel); font-size: 1.1rem; }
+.test .copy-control { margin-bottom: .6rem; }
+.test-guidance { margin-top: 1.2rem; font-weight: 500; max-width: 75ch; }
+.manual-copy { margin-block: .8rem; max-width: 100%; }
+.manual-copy label { display: block; margin-bottom: .5rem; font-size: .9rem; }
+.manual-copy textarea { width: 100%; min-height: 160px; padding: .85rem; font: .9rem/1.5 var(--font-sans); color: var(--ink); background: var(--panel); border: 1px solid var(--rule-strong); border-radius: 4px; resize: vertical; }
+.workshop-footer { padding: 2rem 0; border-top: 1px solid var(--rule); color: var(--ink-2); font-size: .9rem; }
+.workshop-footer .container { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
+@media (max-width: 960px) {
+  .workshop-intro { grid-template-columns: 1fr; }
+  .workshop-island { grid-column: 1; grid-row: 2; }
+  .workshop-meta { grid-row: 3; }
+}
+@media (max-width: 760px) {
+  .workshop-intro, .task-layout { grid-template-columns: 1fr; gap: 2rem; }
+  .workshop-island { grid-column: 1; grid-row: 2; }
+  .workshop-meta { grid-row: 3; justify-content: space-between; gap: 1rem; }
+  .workshop-meta p + p { margin: 0; }
+  .workshop-hero { padding: 3rem 0 2.5rem; }
+  .workshop-section { padding-block: 2.5rem; }
+  .activity, .test { grid-template-columns: 1fr; gap: 1rem; }
+  .activity { padding-block: 1.5rem; }
+  .activity-number { display: inline; margin-right: .75rem; }
+  .workshop-nav { gap: 1rem; font-size: .85rem; }
+}
+@media (max-width: 420px) {
+  .workshop-header .header-row { gap: .8rem; }
+  .workshop-header .wordmark { font-size: 1rem; gap: .3rem; }
+  .workshop-header .wordmark svg { width: 19px; }
+  .workshop-nav { gap: .7rem; font-size: .8rem; }
+  .test blockquote { padding: 1rem; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+@media print {
+  .workshop-header { position: static; }
+  .workshop-nav, .copy-control, .manual-copy, .skip, .copy-note { display: none !important; }
+  .workshop-hero, .workshop-section { padding-block: 1.5rem; }
+  .activity, .test, .task-outcome { break-inside: avoid; }
+  body { background: white; font-size: 11pt; }
+}
