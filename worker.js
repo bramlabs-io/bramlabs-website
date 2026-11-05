@@ -1,7 +1,9 @@
 // Serves the static files in dist/ and sends www and plain http to
-// https://bramlabs.io.
+// https://bramlabs.io. Textshare has its own routes in worker/textshare.js.
+import { handleTextshare } from './worker/textshare.js';
+
 export default {
-  fetch(request, env) {
+  async fetch(request, env) {
     const url = new URL(request.url);
     if (url.hostname === 'www.bramlabs.io' || url.protocol === 'http:') {
       url.hostname = 'bramlabs.io';
@@ -25,6 +27,10 @@ export default {
     if (url.pathname === '/idi/opgave') {
       url.pathname = '/opgave';
       return env.ASSETS.fetch(new Request(url.toString(), request));
+    }
+    if (url.pathname === '/textshare' || url.pathname.startsWith('/textshare/')) {
+      const response = await handleTextshare(request, env, url);
+      if (response) return response;
     }
     return env.ASSETS.fetch(request);
   },

@@ -11,6 +11,14 @@
   "build": {
     "command": "rm -rf dist && mkdir dist && cp -r *.html _headers css js images dist/"
   },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "bramlabs-textshare",
+      "database_id": "33fffe17-782a-41b6-ba48-a885f851fdcd",
+      "migrations_dir": "migrations"
+    }
+  ],
   "assets": {
     "directory": "./dist",
     "binding": "ASSETS",

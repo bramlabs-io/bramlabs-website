@@ -1,0 +1,80 @@
+/* Textshare. Shared BramLabs tokens and type live in styles.css. */
+.textshare-page [hidden] { display: none !important; }
+.textshare-main { padding-block: 3rem 4rem; }
+.textshare-narrow { max-width: 36rem; }
+.textshare-narrow h1 { margin-top: .75rem; }
+.textshare-intro { margin-top: 1rem; color: var(--ink-2); }
+.textshare-hint { margin-top: .5rem; color: var(--ink-2); font-size: .875rem; }
+.textshare-error { min-height: 1.5rem; color: #a3271b; font-size: .9rem; }
+.textshare-message { color: var(--ink-2); }
+
+.textshare-form { display: grid; gap: .6rem; justify-items: start; margin-top: 2rem; }
+.textshare-form label { font-weight: 500; }
+.textshare-form input { width: 100%; max-width: 24rem; }
+.textshare-page input,
+.textshare-page textarea {
+  padding: .65rem .8rem;
+  border: 1px solid var(--rule-strong);
+  border-radius: 6px;
+  background: var(--panel);
+  color: var(--ink);
+  font: inherit;
+}
+.textshare-page input:focus-visible,
+.textshare-page textarea:focus-visible { outline: 2px solid var(--ink); outline-offset: 1px; }
+.textshare-page .btn { border: 1px solid var(--ink); cursor: pointer; }
+.textshare-page .btn:disabled { cursor: wait; opacity: .7; }
+
+#my-docs { margin-top: 3rem; }
+.textshare-list { margin: 1rem 0 0; padding: 0; list-style: none; border-top: 1px solid var(--rule-strong); }
+.textshare-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: .7rem;
+  border-bottom: 1px solid var(--rule);
+  overflow-wrap: anywhere;
+}
+.textshare-open { flex: none; font-size: .9rem; }
+
+.textshare-toolbar { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 1.5rem; margin-bottom: 1.25rem; }
+.textshare-status { min-height: 1.5rem; color: var(--ink-2); font-size: .9rem; }
+.textshare-page .textshare-title-input {
+  width: 100%;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.textshare-editor {
+  display: block;
+  width: 100%;
+  min-height: 55vh;
+  margin-top: .75rem;
+  line-height: 1.6;
+  resize: vertical;
+}
+.textshare-links { display: grid; gap: 1rem; margin-top: 2rem; }
+.textshare-link-row label { display: block; margin-bottom: .35rem; font-size: .9rem; font-weight: 500; }
+.textshare-link-row div { display: flex; gap: .5rem; }
+.textshare-link-row input { flex: 1; min-width: 0; font-family: var(--font-mono); font-size: .8125rem; }
+.textshare-link-row .btn { flex: none; height: auto; }
+.textshare-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.textshare-reader { max-width: 46rem; }
+.textshare-reader h1 { margin-top: .75rem; overflow-wrap: anywhere; }
+.textshare-updated { margin-top: .5rem; color: var(--ink-2); font-size: .875rem; }
+.textshare-text {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule-strong);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.textshare-footer { max-width: 46rem; padding-bottom: 2rem; color: var(--ink-2); font-size: .8125rem; }
